@@ -236,108 +236,39 @@ En résumé, la simulation de contrôle avec SSH permettra de démontrer concrè
 ### 1. Outil d'analyse de paquets réseau :**
    - Wireshark est un outil open-source d'analyse de paquets réseau qui permet de capturer, visualiser, et inspecter le trafic sur un réseau. Il offre une compréhension approfondie du fonctionnement des communications réseau en examinant les paquets de données qui transitent entre les différents points du réseau.
 
-### 2. Utilisation pour la capture et l'inspection du trafic réseau :**
-   - Wireshark est largement utilisé dans les domaines de la sécurité réseau, du dépannage, et de l'analyse des performances. Voici comment Wireshark est utilisé pour capturer et inspecter le trafic réseau :
-
-   - **Capture de paquets :**
-     - Wireshark peut être utilisé pour capturer le trafic réseau en temps réel. Il écoute le trafic sur un réseau spécifique, que ce soit sur un segment local (LAN) ou sur l'ensemble d'Internet, en capturant les paquets de données qui traversent le réseau.
-
-   - **Filtrage des paquets :**
-     - Wireshark offre des fonctionnalités de filtrage puissantes permettant de sélectionner les paquets spécifiques à analyser. Cela peut inclure des filtres basés sur l'adresse IP, le protocole, les ports, ou d'autres critères, offrant ainsi une vue ciblée du trafic.
-
-   - **Inspection des paquets :**
-     - Une fois les paquets capturés, Wireshark permet une inspection détaillée de chaque paquet. On peut examiner les en-têtes et les données, ainsi que les détails de chaque protocole encapsulé. Cela permet de comprendre le contenu des échanges entre les différents nœuds du réseau.
-
-   - **Analyse des statistiques :**
-     - Wireshark fournit des statistiques détaillées sur le trafic capturé, ce qui peut être utile pour identifier les tendances, les goulots d'étranglement, ou les problèmes potentiels sur le réseau. Les statistiques incluent des informations telles que la quantité de données transmises, les temps de réponse, et les taux d'erreur.
-
-   - **Détection d'anomalies :**
-     - En inspectant le trafic réseau avec Wireshark, on peut détecter des anomalies potentielles, telles que des tentatives d'intrusion, des problèmes de configuration réseau, ou des attaques de déni de service. Cela fait de Wireshark un outil essentiel pour la sécurité des réseaux.
-
-En résumé, Wireshark est un outil puissant qui permet de capturer, filtrer, inspecter, et analyser le trafic réseau. Son utilisation offre une visibilité approfondie sur le fonctionnement du réseau, ce qui est particulièrement pertinent pour notre projet où nous examinerons le trafic généré lors de la simulation de contrôle avec SSH.
-
-
------------------------------------------------------------------------------------------------
-
-
-# VI. Attaque Simulée avec Wireshark**
-
-## A. Scénario d'attaque**
-
-### 1. Explication du processus d'attaque simulée :**
-   - Dans le cadre de cette simulation, nous envisageons une attaque d'interception de données non chiffrées sur le réseau. L'attaquant tente de capturer des informations sensibles échangées entre un client et un serveur en exploitant une vulnérabilité potentielle dans la communication.
-
-   - Le processus comprend la capture des paquets de données lors de la transmission entre le client et le serveur. L'objectif est de mettre en évidence les risques de sécurité associés à l'utilisation d'une communication non chiffrée.
-
-### 2. Mise en évidence des risques potentiels :**
-   - Les risques potentiels associés à une communication non chiffrée incluent la possibilité d'interception de données sensibles par des tiers malveillants. Les informations telles que les identifiants de connexion, les données personnelles, ou tout autre contenu sensible peuvent être exposées et exploitées.
-
-   - L'attaquant peut utiliser des techniques telles que l'écoute passive sur le réseau pour intercepter les paquets de données, les analyser et extraire des informations exploitables. Cela souligne l'importance du chiffrement des données, comme le fournit SSH, pour prévenir de telles attaques.
-
-## B. Capture de trafic avec Wireshark**
-
-### 1. Démonstration en temps réel de la capture du trafic non chiffré :**
+### 2. Démonstration en temps réel de la capture du trafic non chiffré :**
    - Pour la démonstration, Wireshark sera utilisé pour capturer le trafic entre le client et le serveur pendant une session non chiffrée. Cela peut être simulé en utilisant des configurations réseau où le chiffrement n'est pas activé.
 
    - L'attaquant, utilisant Wireshark, peut capturer les paquets de données échangés entre le client et le serveur. Ces paquets peuvent contenir des informations sensibles, et la démonstration permettra de visualiser comment ces données peuvent être facilement interceptées.
-
-### 3. Analyse des données capturées :**
-   - Une fois les données capturées, Wireshark permettra une analyse détaillée des paquets. L'attaquant pourra extraire des informations sensibles telles que les mots de passe, les commandes, ou d'autres données confidentielles qui sont normalement exposées lors d'une communication non chiffrée.
-
-   - Cette partie de la démonstration souligne l'impact de la non-utilisation du chiffrement dans les communications réseau, mettant en lumière les risques potentiels en matière de sécurité des données.
-
-En résumé, la simulation d'une attaque avec Wireshark vise à illustrer les risques liés à la communication non chiffrée en mettant en évidence la vulnérabilité potentielle à l'interception de données sensibles. Cela souligne l'importance du chiffrement, comme celui fourni par SSH, pour sécuriser les communications réseau.
-
 
 -----------------------------------------------------------------------------------------------
 
 
 # VII. Analyse des Résultats**
 
-## A. Comparaison des données chiffrées et non chiffrées**
+## A. Montrer que les données SSH sont sécurisées :**
 
-### 1. Mettre en évidence la différence de sécurité entre les deux scénarios :**
-   - En comparant les résultats de la simulation, on peut mettre en évidence la différence fondamentale de sécurité entre les données chiffrées par SSH et les données non chiffrées. Dans le scénario où SSH est utilisé, les données sont sécurisées par un chiffrement robuste, tandis que dans le scénario non chiffré, les données sont vulnérables à l'interception.
-
-   - La démonstration précédente avec Wireshark illustrera clairement comment les données non chiffrées peuvent être facilement capturées, exposant des informations sensibles, alors que les données chiffrées par SSH apparaîtront illisibles pour un observateur externe.
-
-### 2. Montrer que les données SSH sont sécurisées :**
    - En examinant les résultats de la simulation avec SSH, on peut montrer que les données échangées entre le client et le serveur sont sécurisées. Le chiffrement des données par SSH garantit que même si un attaquant intercepte les paquets, il ne peut pas comprendre le contenu, car il est chiffré.
 
    - La comparaison visuelle des données capturées avec Wireshark dans les deux scénarios soulignera la sécurité renforcée offerte par SSH. Les informations sensibles, telles que les identifiants de connexion, les commandes, ou les données confidentielles, restent confidentielles et ne peuvent pas être exploitées par un tiers non autorisé.
 
    - On peut également mettre en avant le mécanisme d'authentification forte de SSH, qui ajoute une couche supplémentaire de sécurité en vérifiant l'identité des parties impliquées dans la communication.
 
-En résumé, l'analyse des résultats met en lumière l'importance du chiffrement des données dans la sécurité des communications réseau. En utilisant SSH, les données sont protégées contre l'interception et l'exploitation, renforçant ainsi la confidentialité et l'intégrité des informations échangées sur le réseau.
 
 -----------------------------------------------------------------------------------------------
 
 # VIII. Conclusion**
 
-## A. Récapitulation des points clés**
+Dans cette présentation, nous avons exploré les fondamentaux des réseaux, mettant en évidence les modèles OSI et TCP/IP, ainsi que le rôle crucial de SSH dans la sécurisation des communications. La démonstration en temps réel a illustré l'établissement sécurisé de connexions avec SSH et a souligné les risques associés à la communication non chiffrée, démontrés via Wireshark
 
-Dans cette présentation, nous avons exploré les aspects fondamentaux des réseaux, en mettant en lumière les modèles de référence OSI et TCP/IP. Nous avons ensuite examiné le positionnement de SSH (Secure Shell) dans ces modèles, soulignant son rôle crucial dans la sécurisation des communications réseau.
 
-Nous avons également introduit SSH en tant que protocole de communication sécurisé, soulignant son utilisation principale pour l'accès distant et la gestion sécurisée des systèmes. Les fonctionnalités de sécurité de SSH, telles que le chiffrement des données et l'authentification forte, ont été détaillées pour illustrer comment SSH renforce la confidentialité et la sécurité des échanges.
 
-La simulation de contrôle avec SSH a permis de démontrer en temps réel l'établissement d'une connexion sécurisée et le chiffrement des données. En utilisant Wireshark, nous avons ensuite simulé une attaque pour mettre en évidence les risques potentiels associés à la communication non chiffrée.
 
-## B. Confirmation de la sécurité de SSH grâce à l'analyse avec Wireshark**
 
-L'analyse des résultats a montré clairement que les données chiffrées par SSH offrent une sécurité supérieure par rapport aux données non chiffrées. En comparant les deux scénarios, nous avons confirmé que le chiffrement de SSH, associé à des mécanismes d'authentification solides, assure la confidentialité, l'intégrité et la sécurité des communications réseau.
+$ sudo apt install openssh-server         [On Debian, Ubuntu and Mint]
+$ sudo yum install openssh                [On RHEL/CentOS/Fedora and Rocky/AlmaLinux]
+$ sudo emerge -a openssh                  [On Gentoo Linux]
+$ sudo apk add openssh                    [On Alpine Linux]
+$ sudo pacman -S openssh                  [On Arch Linux]
+$ sudo zypper install openssh             [On OpenSUSE]    
 
-La démonstration avec Wireshark a permis de visualiser la différence entre les données chiffrées et non chiffrées, soulignant l'importance cruciale du chiffrement pour prévenir les attaques d'interception.
-
-## C. Possibilités d'amélioration de la sécurité**
-
-Bien que SSH soit un protocole sécurisé, il est toujours important de rester vigilant et d'explorer des moyens d'améliorer continuellement la sécurité. Cela peut inclure :
-
-- **Mise à jour régulière :** Assurez-vous que les versions de SSH utilisées sont à jour pour bénéficier des dernières améliorations de sécurité.
-  
-- **Configuration appropriée :** Veillez à configurer SSH correctement, en désactivant les options non sécurisées et en utilisant des protocoles et algorithmes cryptographiques forts.
-
-- **Gestion des clés :** Adoptez de bonnes pratiques de gestion des clés, telles que la rotation régulière des clés et l'utilisation de phrases de passe robustes.
-
-- **Surveillance continue :** Mettez en place des mécanismes de surveillance pour détecter toute activité suspecte et réagissez rapidement en cas de menace potentielle.
-
-En conclusion, bien que SSH soit une solution sécurisée, la sécurité informatique est un processus continu nécessitant une vigilance constante et une adaptation aux nouvelles menaces potentielles. L'amélioration continue des pratiques de sécurité garantit une protection efficace contre les risques émergents.
